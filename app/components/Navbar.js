@@ -7,7 +7,7 @@ export const Navbar = () => {
             <div className="navbar bg-base-100">
                 <a className="text-xl flex flex-col justify-start items-start">
                     <Image src={logo} height={90} width={90} />
-                    <p className='text-primary'>Library Services</p>
+                    <p className='text-primary text-xs'>Library Services</p>
                 </a>
             </div>
         </div>
