@@ -55,3 +55,6 @@ We welcome contributions from the community! If you have ideas for new features,
 For any inquiries, feedback, or support, feel free to [contact us](#). We value your input and are here to assist you on your literary journey.
 
 Happy reading!
+
+[design](https://dribbble.com/shots/14502660-Landing-Page-For-Books-Store)
+
