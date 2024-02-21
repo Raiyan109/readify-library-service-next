@@ -1,8 +1,11 @@
 "use client"
 import { CgMenuGridO } from "react-icons/cg";
 import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 export default function Profile() {
+
+    const { data: session } = useSession()
     return (
         <div>
             <section className="flex flex-col justify-center antialiased bg-gray-100 text-gray-600 min-h-screen p-4">
@@ -26,9 +29,9 @@ export default function Profile() {
                                             </a>
                                             <div className="mt-1 pr-1">
                                                 <a className="inline-flex text-gray-800 hover:text-gray-900" href="#0">
-                                                    <h2 className="text-xl leading-snug justify-center font-semibold">Dominik McNeail</h2>
+                                                    <h2 className="text-xl leading-snug justify-center font-semibold">{session?.user?.name}</h2>
                                                 </a>
-                                                <div className="flex items-center"><span className="text-sm font-medium text-gray-400 -mt-0.5 mr-1">-&gt;</span> <span>🇮🇹</span></div>
+                                                <div className="flex items-center"><span className="text-sm font-medium text-gray-400 -mt-0.5 mr-1">-&gt;</span> <span>{session?.user?.email}</span></div>
                                             </div>
                                         </div>
                                     </header>
