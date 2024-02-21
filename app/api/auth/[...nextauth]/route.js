@@ -7,7 +7,8 @@ import bcrypt from 'bcrypt'
 const authOptions = {
     providers: [
         CredentialsProvider({
-            name: "credentials",
+            // The name to display on the sign in form (e.g. 'Sign in with...')
+            name: "Credentials",
             credentials: {},
 
             async authorize(credentials) {
