@@ -1,7 +1,8 @@
 "use client"
-
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { signIn } from "next-auth/react"
+
 export default function Login() {
 
     const [email, setEmail] = useState('')
@@ -12,7 +13,20 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        try {
+            const res = await signIn('credentials', {
+                email, password, redirect: false
+            })
 
+            if (res.error) {
+                setError("Invalid credentials")
+                return
+            }
+
+            router.replace('bookStore')
+        } catch (error) {
+
+        }
     }
     return (
         <div>
