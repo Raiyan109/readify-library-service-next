@@ -23,9 +23,9 @@ export default function Login() {
                 return
             }
 
-            router.replace('bookStore')
+            router.replace('profile')
         } catch (error) {
-
+            console.log(error);
         }
     }
     return (
