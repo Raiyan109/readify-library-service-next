@@ -1,4 +1,5 @@
-import EditBookForm from "@/app/components/EditBook";
+import BookDetailsComponent from "@/app/components/BookDetails";
+
 
 
 const getBookById = async (id) => {
@@ -14,10 +15,10 @@ const getBookById = async (id) => {
     }
 }
 
-export default async function EditBook({ params }) {
+export default async function BookDetails({ params }) {
     const { id } = params
     const { book } = await getBookById(id)
     const { name } = book
 
-    return <EditBookForm id={id} name={name} />
+    return <BookDetailsComponent id={id} name={name} />
 }
