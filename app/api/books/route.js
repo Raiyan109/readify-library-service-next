@@ -2,6 +2,13 @@ import { connectDB } from "@/lib/mongodb"
 import Book from "@/models/bookModel"
 import { NextResponse } from "next/server"
 
+export async function GET() {
+    await connectDB()
+    const books = await Book.find()
+    console.log(books);
+    return NextResponse.json({ books })
+}
+
 export async function POST(req) {
     try {
         const { name } = await req.json()
