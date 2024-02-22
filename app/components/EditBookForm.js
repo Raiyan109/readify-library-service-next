@@ -5,7 +5,7 @@ import { useState } from "react"
 
 
 export default function EditBookForm({ id, name }) {
-
+    const [newName, setNewName] = useState(name)
     const [file, setFile] = useState(null)
     const [error, setError] = useState('')
     const router = useRouter()
@@ -25,8 +25,8 @@ export default function EditBookForm({ id, name }) {
 
                     <div>
                         <input type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            value={newName}
+                            onChange={(e) => setNewName(e.target.value)}
                             placeholder="Book Name" className="input input-bordered input-primary w-full max-w-xs" />
                     </div>
                     <div>

@@ -1,4 +1,4 @@
-import EditBookForm from "@/app/components/EditBook";
+import EditBookForm from "@/app/components/EditBookForm";
 
 
 const getBookById = async (id) => {
