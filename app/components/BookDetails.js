@@ -1,10 +1,16 @@
+"use client"
+import { useRouter } from "next/navigation";
 import { FaFacebook, FaFacebookF, FaHeart, FaLinkedin, FaStar, FaStarAndCrescent, FaStarHalf, FaStarHalfAlt, FaTwitter } from "react-icons/fa";
 
 export default function BookDetailsComponent({ name }) {
+    const router = useRouter()
     return (
         <div>
             {/* <!-- component --> */}
-            <section className="text-gray-700 body-font overflow-hidden ">
+            <section className="text-primary body-font overflow-hidden ">
+                <div className="p-8">
+                    <button className="btn btn-primary" onClick={() => router.back()}>Back</button>
+                </div>
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg" />
