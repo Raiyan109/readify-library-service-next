@@ -1,6 +1,7 @@
 import { connectDB } from "@/lib/mongodb"
 import Book from "@/models/bookModel"
 import { NextResponse } from "next/server"
+import { writeFile } from 'fs/promises'
 
 export async function GET() {
     await connectDB()
@@ -12,6 +13,21 @@ export async function GET() {
 export async function POST(req) {
     try {
         const { name } = await req.json()
+        // const data = await req.formData()
+        // const file = data.get('file')
+        // if (!file) {
+        //     return NextResponse.json({
+        //         message: 'No image found'
+        //     }, {
+        //         status: 500
+        //     })
+        // }
+
+        // const byteData = await file.arrayBuffer()
+        // const buffer = Buffer.from(byteData)
+        // const path = `/public/${file.name}`
+        // const image = await writeFile(path, buffer)
+        // console.log(image);
         await connectDB()
         await Book.create({ name })
 

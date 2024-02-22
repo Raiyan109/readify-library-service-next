@@ -6,6 +6,7 @@ import { useState } from "react"
 
 export default function AddBook() {
     const [name, setName] = useState('')
+    const [file, setFile] = useState(null)
     const [error, setError] = useState('')
     const router = useRouter()
 
@@ -16,7 +17,11 @@ export default function AddBook() {
             setError('All fields are necessary')
             return
         }
+
         try {
+            // const image = new FormData()
+            // image.append('file', file)
+            // console.log(image);
             const res = await fetch('api/books', {
                 method: "POST",
                 headers: {
@@ -42,6 +47,12 @@ export default function AddBook() {
             <div>
                 <h1 className="text-center text-2xl font-bold mb-12">Add Book</h1>
                 <form onSubmit={handleSubmit} className="space-y-8">
+                    <div>
+                        <input type="file"
+                            name="file"
+                            onChange={(e) => setFile(e.target.files[0])}
+                            className="file-input file-input-bordered file-input-primary w-full max-w-xs" />
+                    </div>
                     <div>
                         <input type="text"
                             value={name}

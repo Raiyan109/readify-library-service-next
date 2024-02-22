@@ -6,7 +6,8 @@ const bookSchema = new Schema({
     name: {
         type: String,
         required: true,
-    }
+    },
+    image: String,
 }, { timestamps: true })
 
 const Book = models.Book || mongoose.model('Book', bookSchema)
