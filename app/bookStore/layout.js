@@ -4,7 +4,7 @@ import BookStore from "./page";
 import { MdSpaceDashboard } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
-export default function BookStoreLayout() {
+export default function BookStoreLayout({ children }) {
     const router = useRouter()
     return (
         <div>
@@ -32,7 +32,7 @@ export default function BookStoreLayout() {
                     <button className="btn btn-primary" onClick={() => router.back()}>Back</button>
                 </div>
             </div>
-            <BookStore />
+            {children}
         </div>
     )
 }

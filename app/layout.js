@@ -1,6 +1,8 @@
 import { Roboto } from 'next/font/google'
 import "./globals.css";
 import { AuthProvider } from './Providers';
+import { UpperNav } from './components/UpperNav';
+import { Navbar } from './components/Navbar';
 
 const roboto = Roboto({ subsets: ["latin"], weight: '400' });
 
@@ -14,6 +16,8 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="night">
       <body className={roboto.className}>
         <AuthProvider>
+          <UpperNav />
+          <Navbar />
           {children}
         </AuthProvider>
       </body>
