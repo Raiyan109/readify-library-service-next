@@ -13,23 +13,23 @@ export async function GET() {
 export async function POST(req) {
     try {
         const { name } = await req.json()
-        const data = await req.formData()
-        const file = data.get('file')
-        if (!file) {
-            return NextResponse.json({
-                message: 'No image found'
-            }, {
-                status: 500
-            })
-        }
+        // const data = await req.formData()
+        // const file = data.get('file')
+        // if (!file) {
+        //     return NextResponse.json({
+        //         message: 'No image found'
+        //     }, {
+        //         status: 500
+        //     })
+        // }
 
-        const byteData = await file.arrayBuffer()
-        const buffer = Buffer.from(byteData)
-        const path = `/public/${file.name}`
-        const image = await writeFile(path, buffer)
-        console.log(image);
+        // const byteData = await file.arrayBuffer()
+        // const buffer = Buffer.from(byteData)
+        // const path = `/public/${file.name}`
+        // const image = await writeFile(path, buffer)
+        // console.log(image);
         await connectDB()
-        await Book.create({ name, image })
+        await Book.create({ name })
 
         return NextResponse.json({ message: "Book added successfully" })
     } catch (error) {
