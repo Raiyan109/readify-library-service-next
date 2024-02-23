@@ -40,3 +40,10 @@ export async function POST(req) {
         })
     }
 }
+
+export async function DELETE(req) {
+    const id = req.nextUrl.searchParams.get("id")
+    await connectDB()
+    await Book.findByIdAndDelete(id)
+    return NextResponse.json({ message: "Book deleted" }, { status: 200 })
+}

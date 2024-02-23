@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { RemoveBtn } from './RemoveBtn'
 
 export const Books = ({ book }) => {
     return (
@@ -12,7 +13,7 @@ export const Books = ({ book }) => {
                 <div className='flex items-center gap-5'>
                     <Link href={`bookDetails/${book?._id}`}><button className="btn btn-xs btn-primary">Details</button></Link>
                     <Link href={`/editBook/${book?._id}`}><button className="btn btn-xs btn-primary">Edit</button></Link>
-                    <button className="btn btn-xs btn-accent">Delete</button>
+                    <RemoveBtn id={book?._id} />
                 </div>
             </div>
 
