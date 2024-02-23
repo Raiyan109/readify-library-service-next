@@ -44,7 +44,7 @@ export default function AddBook() {
                 },
                 body: JSON.stringify({
                     name, cover,
-                    // desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
+                    desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
                 })
             })
             console.log(name, cover, desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold);
@@ -80,7 +80,7 @@ export default function AddBook() {
                                 <input type="text"
                                     value={cover}
                                     onChange={(e) => setCover(e.target.value)}
-                                    placeholder="Image url" className="input input-bordered input-primary w-full max-w-xs" />
+                                    placeholder="/images/image.jpg" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
                             <div>
                                 <input type="text"
