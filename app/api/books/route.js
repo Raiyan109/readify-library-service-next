@@ -13,7 +13,9 @@ export async function GET() {
 export async function POST(req) {
     try {
         const { name, cover,
-            //  desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
+            desc, author, genre, pages,
+            isRented,
+            stock, rentPrice, sellPrice, sold
         } = await req.json()
         console.log(name, cover);
         // const data = await req.formData()
@@ -34,7 +36,9 @@ export async function POST(req) {
         await connectDB()
         const book = await Book.create({
             name, cover,
-            //  desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
+            desc, author, genre, pages,
+            isRented,
+            stock, rentPrice, sellPrice, sold
         })
 
         return NextResponse.json({ message: "Book added successfully", data: book })

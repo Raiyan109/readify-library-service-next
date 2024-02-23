@@ -11,7 +11,7 @@ export default function AddBook() {
     const [author, setAuthor] = useState('')
     const [genre, setGenre] = useState('')
     const [pages, setPages] = useState('')
-    const [isRented, setIsRented] = useState('')
+    const [isRented, setIsRented] = useState(false)
     const [stock, setStock] = useState('')
     const [rentPrice, setRentPrice] = useState('')
     const [sellPrice, setSellPrice] = useState('')
@@ -44,7 +44,10 @@ export default function AddBook() {
                 },
                 body: JSON.stringify({
                     name, cover,
-                    desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
+                    desc,
+                    author, genre, pages,
+                    isRented,
+                    stock, rentPrice, sellPrice, sold
                 })
             })
             console.log(name, cover, desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold);
@@ -112,17 +115,17 @@ export default function AddBook() {
                                     onChange={(e) => setPages(e.target.value)}
                                     placeholder="Pages" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
-                            {/* <div className="form-control border border-primary rounded-lg p-1">
+                            <div className="form-control border border-primary rounded-lg p-1">
                                 <label className="label cursor-pointer">
                                     <span className="label-text text-primary font-bold">Is Rented</span>
                                     <input type="checkbox"
                                         value={isRented}
-                                        onChange={(e) => setIsRented(e.target.value)}
+                                        onChange={(e) => setIsRented(!isRented)}
                                         // defaultChecked
 
                                         className="checkbox checkbox-primary" />
                                 </label>
-                            </div> */}
+                            </div>
                             <div>
                                 <input type="number"
                                     value={stock}

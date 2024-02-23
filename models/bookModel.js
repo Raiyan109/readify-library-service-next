@@ -29,6 +29,7 @@ const bookSchema = new Schema({
     isRented: {
         type: Boolean,
         // required: true,
+        default: false
     },
     stock: {
         type: Number,
