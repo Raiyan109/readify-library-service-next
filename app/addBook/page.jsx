@@ -43,10 +43,11 @@ export default function AddBook() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    name, cover, desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
+                    name, cover,
+                    // desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold
                 })
             })
-
+            console.log(name, cover, desc, author, genre, pages, isRented, stock, rentPrice, sellPrice, sold);
             if (res.ok) {
                 const form = e.target;
                 form.reset();
@@ -106,12 +107,12 @@ export default function AddBook() {
                                     placeholder="Genre" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
                             <div>
-                                <input type="text"
+                                <input type="number"
                                     value={pages}
                                     onChange={(e) => setPages(e.target.value)}
                                     placeholder="Pages" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
-                            <div className="form-control border border-primary rounded-lg p-1">
+                            {/* <div className="form-control border border-primary rounded-lg p-1">
                                 <label className="label cursor-pointer">
                                     <span className="label-text text-primary font-bold">Is Rented</span>
                                     <input type="checkbox"
@@ -121,27 +122,27 @@ export default function AddBook() {
 
                                         className="checkbox checkbox-primary" />
                                 </label>
-                            </div>
+                            </div> */}
                             <div>
-                                <input type="text"
+                                <input type="number"
                                     value={stock}
                                     onChange={(e) => setStock(e.target.value)}
                                     placeholder="Stock" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
                             <div>
-                                <input type="text"
+                                <input type="number"
                                     value={rentPrice}
                                     onChange={(e) => setRentPrice(e.target.value)}
                                     placeholder="Rent Price" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
                             <div>
-                                <input type="text"
+                                <input type="number"
                                     value={sellPrice}
                                     onChange={(e) => setSellPrice(e.target.value)}
                                     placeholder="Sell Price" className="input input-bordered input-primary w-full max-w-xs" />
                             </div>
                             <div>
-                                <input type="text"
+                                <input type="number"
                                     value={sold}
                                     onChange={(e) => setSold(e.target.value)}
                                     placeholder="Sold" className="input input-bordered input-primary w-full max-w-xs" />

@@ -3,47 +3,50 @@ import mongoose, { models } from "mongoose";
 const Schema = mongoose.Schema
 
 const bookSchema = new Schema({
+    cover: {
+        type: String,
+    },
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     desc: {
         type: String,
-        required: true,
+        // required: true,
     },
     author: {
         type: String,
-        required: true,
+        // required: true,
     },
     genre: {
         type: String,
-        required: true,
+        // required: true,
     },
     pages: {
         type: Number,
-        required: true,
+        // required: true,
     },
     isRented: {
         type: Boolean,
-        required: true,
+        // required: true,
     },
     stock: {
         type: Number,
-        required: true,
+        // required: true,
     },
     rentPrice: {
         type: Number,
-        required: true,
+        // required: true,
     },
     sellPrice: {
         type: Number,
-        required: true,
+        // required: true,
     },
     sold: {
         type: Number,
-        required: true,
+        // required: true,
     },
-    cover: String,
+
 }, { timestamps: true })
 
 const Book = models.Book || mongoose.model('Book', bookSchema)
