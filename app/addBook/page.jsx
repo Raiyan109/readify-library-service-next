@@ -13,29 +13,26 @@ export default function AddBook() {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        if (!name) {
-            setError('All fields are necessary')
-            return
+        if (!name || !file) {
+            setError('All fields are necessary');
+            return;
         }
 
         try {
-            // const image = new FormData()
-            // image.append('file', file)
-            // console.log(image);
-            const res = await fetch('api/books', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ name })
-            })
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('file', file);
+
+            const res = await fetch('http://localhost:3000/api/books', {
+                method: 'POST',
+                body: formData,
+            });
 
             if (res.ok) {
-                const form = e.target
-                form.reset()
-                router.push('/bookStore')
-            }
-            else {
+                const form = e.target;
+                form.reset();
+                router.push('/bookStore');
+            } else {
                 console.log('Book adding failed');
             }
         } catch (error) {
@@ -43,28 +40,34 @@ export default function AddBook() {
         }
     }
     return (
-        <div className="p-12 flex justify-center items-center">
-            <div>
-                <h1 className="text-center text-2xl font-bold mb-12">Add Book</h1>
-                <form onSubmit={handleSubmit} className="space-y-8">
-                    <div>
-                        <input type="file"
-                            name="file"
-                            onChange={(e) => setFile(e.target.files[0])}
-                            className="file-input file-input-bordered file-input-primary w-full max-w-xs" />
-                    </div>
-                    <div>
-                        <input type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            placeholder="Book Name" className="input input-bordered input-primary w-full max-w-xs" />
-                    </div>
-                    <div>
-                        <button className="btn btn-primary" type="submit">Add</button>
-                    </div>
-                </form>
-                {error && <p className="text-accent">{error}</p>}
+        <>
+            <div className="p-8">
+                <button className="btn btn-primary" onClick={() => router.back()}>Back</button>
             </div>
-        </div>
+            <div className="p-12 flex justify-center items-center">
+
+                <div>
+                    <h1 className="text-center text-2xl font-bold mb-12">Add Book</h1>
+                    <form onSubmit={handleSubmit} className="space-y-8">
+                        <div>
+                            <input type="file"
+                                name="file"
+                                onChange={(e) => setFile(e.target.files[0])}
+                                className="file-input file-input-bordered file-input-primary w-full max-w-xs" />
+                        </div>
+                        <div>
+                            <input type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Book Name" className="input input-bordered input-primary w-full max-w-xs" />
+                        </div>
+                        <div>
+                            <button className="btn btn-primary" type="submit">Add</button>
+                        </div>
+                    </form>
+                    {error && <p className="text-accent">{error}</p>}
+                </div>
+            </div>
+        </>
     )
 }
