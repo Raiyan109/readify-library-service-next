@@ -1,12 +1,29 @@
-"use client"
+
 import { FaSearch } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import Link from "next/link";
+import { SearchComponent } from "./SearchComponent";
 
 
+const getAllBooks = async () => {
+    try {
+        const res = await fetch('http://localhost:3000/api/books', {
+            cache: 'no-store'
+        })
+        if (!res.ok) {
+            throw new Error('Failed to fetch books')
+        }
 
-export const UpperNav = () => {
+        return res.json()
+    } catch (error) {
+        console.log('error loading books', error);
+    }
+}
+
+export const UpperNav = async () => {
+    const { books } = await getAllBooks()
+    console.log(books);
     return (
 
         <div className="text-primary flex justify-between text-xs lg:text-sm py-2 px-3">
@@ -15,17 +32,7 @@ export const UpperNav = () => {
             </div>
             <div className="flex items-center gap-6">
 
-                {/* Open the modal using document.getElementById('ID').showModal() method */}
-                <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}><FaSearch /></button>
-                <dialog id="my_modal_2" className="modal">
-                    <div className="modal-box space-y-3">
-                        <h3 className="font-bold text-lg">Search books here</h3>
-                        <input type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
-                    </div>
-                    <form method="dialog" className="modal-backdrop">
-                        <button>close</button>
-                    </form>
-                </dialog>
+                <SearchComponent books={books} />
                 <div className="flex items-center">
                     <Link href='/signup'>
                         <div className="flex items-center gap-1">
