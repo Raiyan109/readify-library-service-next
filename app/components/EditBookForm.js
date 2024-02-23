@@ -15,7 +15,24 @@ export default function EditBookForm({ id, name }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
+        try {
+            const res = await fetch(`http://localhost:3000/api/books/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ newName })
+            })
 
+            if (!res.ok) {
+                throw new Error("Failed to update book")
+            }
+
+            router.refresh()
+            router.push('/bookStore')
+        } catch (error) {
+            console.log(error);
+        }
     }
     return (
         <>
