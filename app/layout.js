@@ -3,6 +3,8 @@ import "./globals.css";
 import { AuthProvider } from './Providers';
 import { UpperNav } from './components/UpperNav';
 import { Navbar } from './components/Navbar';
+import { ThemeProvider } from '@/context/ThemeContext';
+import ClientThemeWrapper from '../context/ClientThemeWrapper';
 
 const roboto = Roboto({ subsets: ["latin"], weight: '400' });
 
@@ -13,13 +15,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="night">
+    <html lang="en">
       <body className={roboto.className}>
-        <AuthProvider>
-          <UpperNav />
-          <Navbar />
-          {children}
-        </AuthProvider>
+        <ThemeProvider>
+          <ClientThemeWrapper>
+            <AuthProvider>
+              <UpperNav />
+              <Navbar />
+              {children}
+            </AuthProvider>
+          </ClientThemeWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
