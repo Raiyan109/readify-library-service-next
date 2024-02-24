@@ -11,7 +11,7 @@ export const Navbar = () => {
         <div>
             <div className="navbar bg-base-100 flex justify-between">
                 <a className="text-xl flex flex-col justify-start items-start">
-                    <Image src={logo} height={90} width={90} />
+                    <Image src={logo} height={90} width={90} alt='logo' />
                     <p className='text-primary text-xs'>Library Services</p>
                 </a>
                 <div className=" ">

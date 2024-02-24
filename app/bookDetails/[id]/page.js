@@ -18,7 +18,10 @@ const getBookById = async (id) => {
 export default async function BookDetails({ params }) {
     const { id } = params
     const { book } = await getBookById(id)
-    const { name } = book
+    const { name, cover,
+        desc, author, genre, pages,
+        isRented,
+        stock, rentPrice, sellPrice, sold } = book
 
-    return <BookDetailsComponent id={id} name={name} />
+    return <BookDetailsComponent id={id} name={name} cover={cover} desc={desc} author={author} genre={genre} pages={pages} isRented={isRented} stock={stock} rentPrice={rentPrice} sellPrice={sellPrice} sold={sold} />
 }

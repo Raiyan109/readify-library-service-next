@@ -1,8 +1,12 @@
 "use client"
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { FaFacebook, FaFacebookF, FaHeart, FaLinkedin, FaStar, FaStarAndCrescent, FaStarHalf, FaStarHalfAlt, FaTwitter } from "react-icons/fa";
 
-export default function BookDetailsComponent({ name }) {
+export default function BookDetailsComponent({ name, cover,
+    desc, author, genre, pages,
+    isRented,
+    stock, rentPrice, sellPrice, sold }) {
     const router = useRouter()
     return (
         <div>
@@ -13,7 +17,7 @@ export default function BookDetailsComponent({ name }) {
                 </div>
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg" />
+                        <Image className="object-cover object-center rounded border border-primary" src={cover} alt={name} width={300} height={300} />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <h2 className="text-sm title-font text-primary tracking-widest">{name}</h2>
                             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">The Catcher in the Rye</h1>
