@@ -13,7 +13,7 @@ export const Books = ({ book }) => {
                 {/* <h1>{book.cover}</h1> */}
                 <h1>{book.name}</h1>
                 <div className='flex items-center gap-5'>
-                    <Link href={`bookDetails/${book?._id}`}><button className="btn btn-xs btn-primary">Details</button></Link>
+                    <Link href={`/bookDetails/${book?._id}`}><button className="btn btn-xs btn-primary">Details</button></Link>
                     <Link href={`/editBook/${book?._id}`}><button className="btn btn-xs btn-primary">Edit</button></Link>
                     <RemoveBtn id={book?._id} />
                 </div>
