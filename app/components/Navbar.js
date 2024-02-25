@@ -9,7 +9,7 @@ export const Navbar = () => {
     const { changeTheme } = useContext(ThemeContext);
     return (
         <div>
-            <div className="navbar bg-base-100 flex justify-between overflow-hidden">
+            <div className="navbar bg-base-100 flex justify-between overflow-hidden z-10 mb-10">
                 <a href='/' className="text-xl flex flex-col justify-start items-start">
                     <Image src={logo} height={80} width={80} alt='logo' />
 
