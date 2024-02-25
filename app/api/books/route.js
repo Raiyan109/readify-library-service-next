@@ -35,6 +35,7 @@ export async function POST(req) {
         // console.log(image);
         await connectDB()
         const book = await Book.create({
+            // image,
             name, cover,
             desc, author, genre, pages,
             isRented,

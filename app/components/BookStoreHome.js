@@ -16,18 +16,27 @@ const getAllBooks = async () => {
 }
 
 export const BookStoreHome = async () => {
-    const { books } = await getAllBooks()
-    console.log(books);
+    try {
+        const { books } = await getAllBooks() ?? {}; // Optional chaining
+        console.log(books);
 
-
-    return (
-        <div className='flex justify-center items-center flex-col py-16'>
-            <h1 className='text-center text-4xl pb-20 text-primary'>All Books</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
-                {books.map((book) => (
-                    <Books key={book.id} book={book} />
-                ))}
+        return (
+            <div className='flex justify-center items-center flex-col py-16'>
+                <h1 className='text-center text-4xl pb-20 text-primary'>All Books</h1>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+                    {books && books.map((book) => (
+                        <Books key={book.id} book={book} />
+                    ))}
+                </div>
             </div>
-        </div>
-    )
-}
+        );
+    } catch (error) {
+        console.log('Error loading books', error);
+        // Handle the error or display a fallback message
+        return (
+            <div className='flex justify-center items-center flex-col py-16'>
+                <h1 className='text-center text-4xl pb-20 text-primary'>Error Loading Books</h1>
+            </div>
+        );
+    }
+};

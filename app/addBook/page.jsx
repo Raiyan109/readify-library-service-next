@@ -43,6 +43,7 @@ export default function AddBook() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
+                    // formData,
                     name, cover,
                     desc,
                     author, genre, pages,
@@ -74,11 +75,11 @@ export default function AddBook() {
                     <form onSubmit={handleSubmit} className=" ">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                             {/* <div>
-                            <input type="file"
-                                name="file"
-                                onChange={(e) => setFile(e.target.files[0])}
-                                className="file-input file-input-bordered file-input-primary w-full max-w-xs" />
-                        </div> */}
+                                <input type="file"
+                                    name="file"
+                                    onChange={(e) => setFile(e.target.files[0])}
+                                    className="file-input file-input-bordered file-input-primary w-full max-w-xs" />
+                            </div> */}
                             <div>
                                 <input type="text"
                                     value={cover}

@@ -11,7 +11,7 @@ export default function BookDetailsComponent({ name, cover,
     return (
         <div>
             {/* <!-- component --> */}
-            <section className="text-primary body-font overflow-hidden ">
+            <section className="text-primary body-font overflow-hidden">
                 <div className="p-8">
                     <button className="btn btn-primary" onClick={() => router.back()}>Back</button>
                 </div>
@@ -19,8 +19,8 @@ export default function BookDetailsComponent({ name, cover,
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
                         <Image className="object-cover object-center rounded border border-primary" src={cover} alt={name} width={300} height={300} />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 className="text-sm title-font text-primary tracking-widest">{name}</h2>
-                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">The Catcher in the Rye</h1>
+                            <h2 className="text-sm title-font text-primary tracking-widest mb-2">{author}</h2>
+                            <h1 className="text-primary text-3xl title-font font-medium mb-1">{name}</h1>
                             <div className="flex mb-4">
                                 <span className="flex items-center">
                                     <FaStar className="text-accent" />
