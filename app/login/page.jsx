@@ -23,7 +23,7 @@ export default function Login() {
                 return
             }
 
-            router.replace('/profile')
+            router.push('/profile')
         } catch (error) {
             console.log(error);
         }
