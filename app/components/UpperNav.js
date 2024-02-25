@@ -23,7 +23,7 @@ const getAllBooks = async () => {
 
 export const UpperNav = async () => {
     const { books } = await getAllBooks()
-    console.log(books);
+    // console.log(books);
     return (
 
         <div className="text-primary flex justify-between text-xs lg:text-sm py-2 px-3">

@@ -6,7 +6,7 @@ import { writeFile } from 'fs/promises'
 export async function GET() {
     await connectDB()
     const books = await Book.find()
-    console.log(books);
+    // console.log(books);
     return NextResponse.json({ books })
 }
 
