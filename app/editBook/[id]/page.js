@@ -3,7 +3,7 @@ import EditBookForm from "@/app/components/EditBookForm";
 
 const getBookById = async (id) => {
     try {
-        const res = await fetch(`http://localhost:3000/api/books/${id}`, { cache: "no-store" })
+        const res = await fetch(`https://readify-library-service-next.vercel.app/api/books/${id}`, { cache: "no-store" })
 
         if (!res.ok) {
             throw new Error("Failed to fetch book")

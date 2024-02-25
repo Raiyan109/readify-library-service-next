@@ -8,7 +8,7 @@ import { SearchComponent } from "./SearchComponent";
 
 const getAllBooks = async () => {
     try {
-        const res = await fetch('https://readify-library-service-next-2.vercel.app/api/books', {
+        const res = await fetch('https://readify-library-service-next.vercel.app/api/books', {
             cache: 'no-store'
         })
         if (!res.ok) {
