@@ -2,7 +2,7 @@ import { Books } from '../components/Books'
 
 const getAllBooks = async () => {
     try {
-        const res = await fetch('http://localhost:3000/api/books', {
+        const res = await fetch('https://readify-library-service-next-2.vercel.app/api/books', {
             cache: 'no-store'
         })
         if (!res.ok) {
