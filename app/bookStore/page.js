@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { BookStoreHome } from '../components/BookStoreHome'
 import openBook from '@/public/images/open-book.jpg'
 
+
+
 export default async function BookStore() {
     return (
         <div>

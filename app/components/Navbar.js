@@ -10,7 +10,7 @@ export const Navbar = () => {
     return (
         <div>
             <div className="navbar bg-base-100 flex justify-between overflow-hidden">
-                <a className="text-xl flex flex-col justify-start items-start">
+                <a href='/' className="text-xl flex flex-col justify-start items-start">
                     <Image src={logo} height={80} width={80} alt='logo' />
 
                 </a>
