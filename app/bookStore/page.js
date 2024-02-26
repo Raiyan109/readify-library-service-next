@@ -1,10 +1,11 @@
+
 import Image from 'next/image'
 import { BookStoreHome } from '../components/BookStoreHome'
 import openBook from '@/public/images/open-book.jpg'
 
 
 
-export default async function BookStore() {
+export default function BookStore() {
     return (
         <div>
             <div className="hero bg-base-200 shadow-xl gap-6">

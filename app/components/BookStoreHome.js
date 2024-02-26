@@ -28,7 +28,7 @@ export const BookStoreHome = async () => {
                     <div>
                         <h1 className='text-center text-4xl pb-20 text-primary'>All Books</h1>
                     </div>
-                    <FilterComponent />
+                    <FilterComponent books={books?.books} />
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                     {books.books && books?.books?.map((book) => (

@@ -1,8 +1,40 @@
 "use client"
 import React, { useState } from 'react'
+import { FilterResult } from './FilterResult';
 
-export const FilterComponent = () => {
-    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+export const FilterComponent = ({ books }) => {
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const handleChange = (event) => {
+        console.log(event.target.value);
+        setSelectedCategory(event.target.value);
+    };
+
+    function filteredData(books, selected) {
+        let filteredProducts = books
+
+        if (selected) {
+            filteredProducts = filteredProducts.filter(
+                ({ genre }) =>
+                    genre === selected
+            )
+        }
+
+        return filteredProducts.map(
+            ({ name, cover,
+                desc, author, genre, pages,
+                isRented,
+                stock, rentPrice, sellPrice, sold }) => (
+                <FilterResult
+                    key={Math.random()}
+                    name={name} cover={cover} desc={desc} author={author} genre={genre} pages={pages} isRented={isRented} stock={stock} rentPrice={rentPrice} sellPrice={sellPrice} sold={sold}
+
+                />
+            )
+        )
+    }
+
+    const result = filteredData(books, selectedCategory)
+    console.log(result);
     return (
         <div className="drawer drawer-end p-5 z-10">
             <input id="my-drawer2" type="checkbox" className="drawer-toggle" />
@@ -18,17 +50,31 @@ export const FilterComponent = () => {
                     {/* Sidebar content here */}
                     <h1 className="p-5 text-2xl font-bold">All Filters</h1>
 
-                    <a href="#category" className="bg-secondary hover:bg-accent text-black font-semibold text-lg rounded-lg w-full px-2 py-3">
-                        Category
-                    </a>
-                    <a href="#category" className="bg-secondary hover:bg-accent text-black font-semibold text-lg rounded-lg w-full px-2 py-3">
-                        My Library
-                    </a>
-                    <a href="#category" className="bg-secondary hover:bg-accent text-black font-semibold text-lg rounded-lg w-full px-2 py-3">
-                        Download                            </a>
-                    <a href="#category" className="bg-secondary hover:bg-accent text-black font-semibold text-lg rounded-lg w-full px-2 py-3">
-                        Favorite
-                    </a>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <span className="label-text">Programming Languages</span>
+                            <input type="radio"
+                                onChange={handleChange}
+                                name="radio-10"
+                                value='Programming Languages'
+                                className="radio checked:bg-red-500"
+                                checked={selectedCategory === "Programming Languages"} />
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+                            <span className="label-text">Thriller</span>
+                            <input type="radio" onChange={handleChange}
+                                name="radio-10"
+                                value='thriller' className="radio checked:bg-blue-500"
+                                checked={selectedCategory === "Thriller"}
+                            />
+                        </label>
+                    </div>
+
+                    <div>
+                        {result} {/* Display filtered data */}
+                    </div>
                 </div>
             </div>
         </div>
