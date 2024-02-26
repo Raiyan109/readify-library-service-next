@@ -51,7 +51,6 @@ export const AllBooks = ({ books }) => {
     }
 
     const result = filteredData(books, selectedCategory)
-    console.log(result);
 
     const handleAscending = () => {
         let data = [...books]

@@ -2,3 +2,5 @@
 [Crud full](https://www.youtube.com/watch?v=u3WQKGLU6AA)
 [Search filter](https://medium.com/@ryanmambou/search-filter-in-nextjs-b30381c96f06)
 [Theme controller daisy ui](https://medium.com/@tomoradnejad/mastering-ui-theming-in-next-14-ec3b06361917)
+[Input Range Price Filter](https://www.youtube.com/watch?v=4JtpcNQGEt0)
+[Radio category Filter](https://www.youtube.com/watch?v=lfm_Hu0hEms)
