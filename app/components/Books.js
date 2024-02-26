@@ -15,6 +15,7 @@ export const Books = ({ name, cover,
                 <Image src={cover ? cover : placeholder} alt='Book' width={100} height={100} style={{ objectFit: 'cover' }} />
                 {/* <h1>{book.cover}</h1> */}
                 <h1>{name}</h1>
+                <h1>{sellPrice}</h1>
                 <div className='flex items-center gap-5'>
                     <Link href={`/bookDetails/${id}`}><button className="btn btn-xs btn-primary">Details</button></Link>
                     <Link href={`/editBook/${id}`}><button className="btn btn-xs btn-primary">Edit</button></Link>

@@ -15,7 +15,10 @@ export const AllBooks = ({ books }) => {
         console.log(event.target.value);
         setSelectedCategory(event.target.value);
     };
-
+    // Range filter handler
+    const handlePriceChange = (e) => {
+        setMaxPrice(e.target.value)
+    }
     function filteredData(books, selected) {
         let filteredProducts = books
 
@@ -26,7 +29,14 @@ export const AllBooks = ({ books }) => {
             )
         }
 
-        return filteredProducts.map(
+
+
+        const priceFilter = filteredProducts.filter(
+            (item) => item.sellPrice >= minPrice && item.sellPrice <= maxPrice
+        )
+        console.log(priceFilter);
+
+        return priceFilter.map(
             ({ name, cover,
                 desc, author, genre, pages,
                 isRented,
@@ -42,15 +52,7 @@ export const AllBooks = ({ books }) => {
 
     const result = filteredData(books, selectedCategory)
     console.log(result);
-    // Range filter handler
-    const handlePriceChange = (e) => {
-        setMaxPrice(e.target.value)
-    }
 
-    const priceFilter = result.filter(
-        (item) => item.sellPrice >= minPrice && item.sellPrice <= maxPrice
-    )
-    console.log(priceFilter);
     const handleAscending = () => {
         let data = [...books]
         // if (data.length > 0) {
@@ -146,7 +148,7 @@ export const AllBooks = ({ books }) => {
                     {/* {books && books?.map((book) => (
                         <Books key={book?._id} book={book} />
                     ))} */}
-                    {priceFilter}
+                    {result}
                 </div>
             </div>
         </div>
