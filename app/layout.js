@@ -5,6 +5,7 @@ import { UpperNav } from './components/UpperNav';
 import { Navbar } from './components/Navbar';
 import { ThemeProvider } from '@/context/ThemeContext';
 import ClientThemeWrapper from '../context/ClientThemeWrapper';
+import { BooksProvider } from '@/context/BooksContext';
 
 const roboto = Roboto({ subsets: ["latin"], weight: '400' });
 
@@ -19,11 +20,13 @@ export default function RootLayout({ children }) {
       <body className={roboto.className}>
         <ThemeProvider>
           <ClientThemeWrapper>
-            <AuthProvider>
-              <UpperNav />
-              <Navbar />
-              {children}
-            </AuthProvider>
+            <BooksProvider>
+              <AuthProvider>
+                <UpperNav />
+                <Navbar />
+                {children}
+              </AuthProvider>
+            </BooksProvider>
           </ClientThemeWrapper>
         </ThemeProvider>
       </body>
