@@ -1,14 +1,16 @@
 # [Readify Library Services](https://readify-library-service-next.vercel.app/)
 
-Welcome to Readify Library Services, your go-to platform for exploring a world of books, connecting with fellow book lovers, and enhancing your reading experience. Dive into our extensive catalog, borrow your favorite titles, and become part of our vibrant literary community.
+Welcome to Readify Library Services, a personal project designed to showcase my skills as a Next.js developer. Readify is a full-stack library service website where users can explore a vast collection of books, borrow or reserve books, and manage their reading preferences.
+
 
 ## Table of Contents
 
 - [About Readify](#about-readify)
 - [Features](#features)
+- [Technologies Used](#technologies)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-- [Contact Us](#contact-us)
+- [License](#contact-us)
 
 ## About Readify
 
@@ -17,44 +19,59 @@ Readify is a comprehensive library service designed to make your reading journey
 ### Key Highlights
 
 - **Extensive Catalog:** Explore a diverse range of books, from classic literature to contemporary bestsellers.
-- **User-Friendly Platform:** Our intuitive interface makes it easy to discover, borrow, and manage your reading list.
+- **User-Friendly Platform:** My app's intuitive interface makes it easy to discover, borrow, and manage your reading list.
 - **Community Engagement:** Connect with fellow book enthusiasts, share recommendations, and participate in discussions.
 - **Secure and Reliable:** Your reading history and personal information are handled with the utmost care and security.
 
 ## Features
 
-### 📚 Explore Our Catalog
-Browse through our vast collection of books, organized by genres, authors, and popularity.
+- **Authentication:** Implemented user authentication using Next-auth and MongoDB, ensuring secure access to user accounts and data.
+- **Book Catalog:** All books are sourced from a MongoDB database, allowing users to browse, search, and explore a diverse range of titles.
+- **CRUD Operations:** Utilized Next.js 14 latest server actions to implement full CRUD methods, enabling seamless management of book data.
+- **Genre Filtering:** Implemented a filter by genre feature, allowing users to explore books based on their preferred genres.
+- **Price Filtering:** Added a filter by price functionality using a range slider, enabling users to refine their search based on book prices.
 
-### 🌟 Featured Reads
-Discover handpicked selections of featured reads, showcasing the best and latest additions to our catalog.
 
-### 📖 Book Details
-Explore detailed information about each book, including synopses, author bios, and availability status.
+## Technologies Used
 
-### 🔍 Search and Filters
-Effortlessly find your next read with our powerful search and filtering options.
-
-### 📱 User Authentication
-Create your Readify account to unlock personalized features, manage your borrowing history, and connect with other readers.
+- Next.js
+- MongoDB
+- Mongoose
+- Next-auth
+- React
+- Tailwind CSS
+- Daisy UI
 
 ## Getting Started
 
 To get started with Readify Library Services, follow these simple steps:
 
-1. **Explore the Catalog:** Visit our [website](#) and start browsing our catalog.
-2. **Sign Up:** Create a Readify account to access personalized features and engage with the community.
-3. **Discover Your Next Read:** Find your favorite books, borrow them, and enjoy a seamless reading experience.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Raiyan109/readify-library-service-next.git
+```
+
+2. cd readify-library-service-next
+
+3. npm install
+
+4. Set up environment variables:
+
+Create a .env.local file in the root directory.
+Add environment variables for MongoDB connection string, Next-auth secret, etc.
+
+5. npm run dev
 
 ## Contributing
 
-We welcome contributions from the community! If you have ideas for new features, bug fixes, or improvements, please check out our [Contribution Guidelines](CONTRIBUTING.md).
+Contributions are welcome! Feel free to open a pull request with any enhancements, bug fixes, or new features you'd like to add.
 
-## Contact Us
+## License
 
-For any inquiries, feedback, or support, feel free to [contact us](#). We value your input and are here to assist you on your literary journey.
+This project is licensed under the MIT License.
 
-Happy reading!
 
-[design](https://dribbble.com/shots/14502660-Landing-Page-For-Books-Store)
+
+
 

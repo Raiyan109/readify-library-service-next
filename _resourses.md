@@ -4,3 +4,4 @@
 [Theme controller daisy ui](https://medium.com/@tomoradnejad/mastering-ui-theming-in-next-14-ec3b06361917)
 [Input Range Price Filter](https://www.youtube.com/watch?v=4JtpcNQGEt0)
 [Radio category Filter](https://www.youtube.com/watch?v=lfm_Hu0hEms)
+[design](https://dribbble.com/shots/14502660-Landing-Page-For-Books-Store)
