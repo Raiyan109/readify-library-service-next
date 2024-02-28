@@ -1,18 +1,23 @@
 "use client"
+import { BooksContext } from "@/context/BooksContext";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
 import { FaFacebook, FaFacebookF, FaHeart, FaLinkedin, FaStar, FaStarAndCrescent, FaStarHalf, FaStarHalfAlt, FaTwitter } from "react-icons/fa";
 
-export default function BookDetailsComponent({ name, cover,
-    desc, author, genre, pages,
-    isRented,
-    stock, rentPrice, sellPrice, sold }) {
+export default function BookDetailsComponent({ book }) {
 
+    const { cartData, setCartData } = useContext(BooksContext)
 
     const router = useRouter()
+
+
     const handleCart = (e, reason) => {
         e.preventDefault()
-        console.log(reason);
+
+        const newData = { ...book, type: reason }
+        setCartData(newData)
+        console.log(cartData);
     }
     return (
         <div>
@@ -23,10 +28,10 @@ export default function BookDetailsComponent({ name, cover,
                 </div>
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                        <Image className="object-cover object-center rounded border border-primary" src={cover} alt={name} width={300} height={300} />
+                        <Image className="object-cover object-center rounded border border-primary" src={book?.cover} alt={book.name} width={300} height={300} />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 className="text-sm title-font text-primary tracking-widest mb-2">{author}</h2>
-                            <h1 className="text-primary text-3xl title-font font-medium mb-1">{name}</h1>
+                            <h2 className="text-sm title-font text-primary tracking-widest mb-2">{book.author}</h2>
+                            <h1 className="text-primary text-3xl title-font font-medium mb-1">{book.name}</h1>
                             {/* <div className="flex mb-4">
                                 <span className="flex items-center">
                                     <FaStar className="text-accent" />
@@ -49,18 +54,18 @@ export default function BookDetailsComponent({ name, cover,
                                     </a>
                                 </span>
                             </div> */}
-                            <p className="leading-relaxed text-primary/60">{desc}</p>
+                            <p className="leading-relaxed text-primary/60">{book.desc}</p>
                             <div className="flex mt-6 items-center gap-10 pb-5 border-b-2 border-primary mb-5 text-primary">
                                 <div className="flex flex-col items-center gap-3 border-r-2 border-secondary pr-8">
-                                    <h1 className="text-xl">{pages}</h1>
+                                    <h1 className="text-xl">{book.pages}</h1>
                                     <h1>Pages</h1>
                                 </div>
                                 <div className="flex flex-col items-center gap-3 border-r-2 border-secondary pr-8">
-                                    <h1 className="text-xl">{sellPrice}</h1>
+                                    <h1 className="text-xl">{book.sellPrice}</h1>
                                     <h1>Sell Price</h1>
                                 </div>
                                 <div className="flex flex-col items-center gap-3">
-                                    <h1 className="text-xl">{rentPrice}</h1>
+                                    <h1 className="text-xl">{book.rentPrice}</h1>
                                     <h1>Rent Price</h1>
                                 </div>
                                 {/* <div className="flex">
@@ -90,7 +95,7 @@ export default function BookDetailsComponent({ name, cover,
                                 <span className="title-font font-medium text-2xl text-secondary">$58.00</span>
                                 <div className="flex justify-between items-center gap-5">
                                     <button className="flex ml-auto text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded" onClick={(e) => handleCart(e, 'Buy')}>Buy</button>
-                                    <button className="flex ml-auto text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded" onClick={(e) => handleCart(e, 'Rent')}>Rent</button>
+                                    <button className="flex ml-auto text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-secondary rounded" onClick={(e) => handleCart(e, 'Rent')}>Rent</button>
                                 </div>
                                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-primary ml-4">
                                     <FaHeart />

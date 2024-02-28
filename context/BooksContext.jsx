@@ -1,13 +1,14 @@
 "use client"
 
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const BooksContext = createContext()
 
 export const BooksProvider = ({ children }) => {
+    const [cartData, setCartData] = useState([])
 
     return (
-        <BooksContext.Provider value={{ test: 'test' }}>
+        <BooksContext.Provider value={{ cartData, setCartData }}>
             {children}
         </BooksContext.Provider>
     )

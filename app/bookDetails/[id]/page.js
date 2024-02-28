@@ -23,5 +23,7 @@ export default async function BookDetails({ params }) {
         isRented,
         stock, rentPrice, sellPrice, sold } = book
 
-    return <BookDetailsComponent id={id} name={name} cover={cover} desc={desc} author={author} genre={genre} pages={pages} isRented={isRented} stock={stock} rentPrice={rentPrice} sellPrice={sellPrice} sold={sold} />
+    return <BookDetailsComponent id={id} book={book}
+    //  name={name} cover={cover} desc={desc} author={author} genre={genre} pages={pages} isRented={isRented} stock={stock} rentPrice={rentPrice} sellPrice={sellPrice} sold={sold}
+    />
 }
