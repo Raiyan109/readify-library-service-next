@@ -7,7 +7,13 @@ export default function BookDetailsComponent({ name, cover,
     desc, author, genre, pages,
     isRented,
     stock, rentPrice, sellPrice, sold }) {
+
+
     const router = useRouter()
+    const handleCart = (e, reason) => {
+        e.preventDefault()
+        console.log(reason);
+    }
     return (
         <div>
             {/* <!-- component --> */}
@@ -80,9 +86,12 @@ export default function BookDetailsComponent({ name, cover,
                                     </div>
                                 </div> */}
                             </div>
-                            <div className="flex">
+                            <div className="flex justify-between">
                                 <span className="title-font font-medium text-2xl text-secondary">$58.00</span>
-                                <button className="flex ml-auto text-white bg-accent border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded">Button</button>
+                                <div className="flex justify-between items-center gap-5">
+                                    <button className="flex ml-auto text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded" onClick={(e) => handleCart(e, 'Buy')}>Buy</button>
+                                    <button className="flex ml-auto text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded" onClick={(e) => handleCart(e, 'Rent')}>Rent</button>
+                                </div>
                                 <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-primary ml-4">
                                     <FaHeart />
                                 </button>

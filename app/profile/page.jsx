@@ -48,7 +48,7 @@ export default function Profile() {
                                             <div className="dropdown dropdown-hover">
                                                 <div tabIndex={0} role="button" className="btn m-1 btn-accent"><CgMenuGridO /></div>
                                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
-                                                    <li className="hover:bg-secondary rounded-md"
+                                                    <li className="hover:bg-secondary hover:text-neutral text-black rounded-md"
                                                         onClick={() => signOut({ callbackUrl: "/login" })}
                                                     ><a>Sign out</a></li>
 
