@@ -1,3 +1,174 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shape {
+    position: absolute;
+}
+
+.s1 {
+    left: 2%;
+    top: 10%;
+}
+
+.s2 {
+    left: 18%;
+    top: 30%;
+}
+
+.s3 {
+    left: 5%;
+    bottom: 30%;
+}
+
+.s4 {
+    left: 2%;
+    bottom: 10%;
+}
+
+.s5 {
+    left: 44%;
+    top: 10%;
+}
+
+.s6 {
+    left: 36%;
+    bottom: 10%;
+}
+
+.s7 {
+    top: 20%;
+    right: 25%;
+}
+
+.s8 {
+    right: 24%;
+    bottom: 20%;
+}
+
+.s9 {
+    right: 2%;
+    top: 10%;
+}
+
+.s10 {
+    top: 45%;
+    right: 11%;
+}
+
+.s11 {
+    bottom: 10%;
+    right: 2%;
+}
+
+
+
+/* Hero */
+.box {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+.container {
+    width: 320px;
+}
+
+.clock {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    padding: 70px 15px;
+    -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    position: absolute;
+    bottom: 230px;
+    left: -90px;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shape1 {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    background: -o-linear-gradient(315deg, #ff5b84, #eb3461);
+    background: linear-gradient(135deg, #ff5b84, #eb3461);
+    background-image: url(../public/images/library.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    border-radius: 50%;
+    bottom: 230px;
+    right: -90px;
+    z-index: -1;
+}
+
+.shape2 {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    background: -o-linear-gradient(315deg, #426cf8, #3ebdf0);
+    background: linear-gradient(135deg, #426cf8, #3ebdf0);
+    background-image: url(../public/images/book-open-2.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    border-radius: 50%;
+    top: 130px;
+    left: -90px;
+    z-index: -1;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+#time {
+    font-size: 40px;
+    display: inline-block;
+}
+
+#day {
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c5c5c5;
+    text-align: center;
+}
+
+#midday {
+    display: inline-block;
+    font-size: 30px;
+}
+
+.watch-me {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    /* color: #ffffff; */
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.06);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    padding: 10px 0;
+    margin-top: 20px;
+    -webkit-box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 25px 23px rgba(0, 0, 0, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+}
+
+i.fab {
+    color: #ff0000;
+}

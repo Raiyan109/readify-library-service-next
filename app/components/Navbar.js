@@ -12,7 +12,7 @@ export const Navbar = () => {
     console.log(cartData);
     return (
         <div>
-            <div className="navbar bg-base-100 flex justify-end overflow-hidden z-10 mb-10">
+            <div className="navbar bg-base-100 flex justify-end overflow-hidden z-10">
                 {/* <a href='/' className="text-xl flex flex-col justify-start items-start">
                     <Image src={logo} height={80} width={80} alt='logo' />
 
