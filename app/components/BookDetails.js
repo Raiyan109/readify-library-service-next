@@ -16,6 +16,7 @@ export default function BookDetailsComponent({ book }) {
         e.preventDefault()
 
         const newData = { ...book, type: reason }
+        // setCartData([...cartData, newData])
         setCartData(newData)
         console.log(cartData);
     }

@@ -71,12 +71,12 @@ export default function Signup() {
                 <div className="relative p-5 lg:px-20 flex flex-col md:flex-row items-center justify-center">
 
                     {/* <!-- Social Media --> */}
-                    <div className="w-full md:w-1/2 p-5 md:px-0 mx-5">
+                    {/* <div className="w-full md:w-1/2 p-5 md:px-0 mx-5">
                         <div className="bg-gray-900 border border-secondary w-full lg:w-1/2 h-full p-5 pt-8">
                             <h3 className="text-2xl font-semibold mb-5">
                                 Sign up using social media
                             </h3>
-                            {/* <!-- list --> */}
+                           
                             <div className="flex flex-col gap-3">
                                 <a href="#" className="flex items-center hover:text-black hover:bg-primary p-2">
                                     <svg fill="currentColor" className="w-6 h-6 m-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ export default function Signup() {
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* <!-- Contact Me --> */}
                     <form onSubmit={handleSubmit} className="w-full md:w-1/2 border border-secondary p-6 bg-gray-900">

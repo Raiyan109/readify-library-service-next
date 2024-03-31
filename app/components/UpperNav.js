@@ -1,9 +1,10 @@
-
+import logo from '@/public/images/logo.png'
 import { FaSearch } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import Link from "next/link";
 import { SearchComponent } from "./SearchComponent";
+import Image from "next/image";
 
 
 const getAllBooks = async () => {
@@ -26,9 +27,12 @@ export const UpperNav = async () => {
     // console.log(books);
     return (
 
-        <div className="text-primary flex justify-between text-xs lg:text-sm py-2 px-3">
+        <div className="text-primary flex justify-between text-xs lg:text-sm p-5">
             <div>
-                <h3 className='uppercase'>Contact us on 01617910378</h3>
+                <a href='/' className="text-xl flex flex-col justify-start items-start">
+                    <Image src={logo} height={80} width={80} alt='logo' />
+
+                </a>
             </div>
             <div className="flex items-center gap-6">
 
@@ -48,9 +52,9 @@ export const UpperNav = async () => {
                         </div>
                     </Link>
                 </div>
-                <div>
+                {/* <div>
                     <h3>Your cart: 0 items - $0.00</h3>
-                </div>
+                </div> */}
             </div>
         </div>
 
