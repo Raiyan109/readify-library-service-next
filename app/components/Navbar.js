@@ -7,8 +7,8 @@ import { ThemeBtn } from './ThemeBtn'
 import { BooksContext } from '@/context/BooksContext'
 
 export const Navbar = () => {
-    const { changeTheme } = useContext(ThemeContext);
-    const { cartData } = useContext(BooksContext)
+    // const { changeTheme } = useContext(ThemeContext);
+    // const { cartData } = useContext(BooksContext)
     console.log(cartData);
     return (
         <div>
