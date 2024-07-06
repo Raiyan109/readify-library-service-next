@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
             <BooksProvider>
               <AuthProvider>
                 <UpperNav />
-                <Navbar />
+                {/* <Navbar /> */}
                 {children}
                 <Footer />
               </AuthProvider>

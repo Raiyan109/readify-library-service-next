@@ -12,7 +12,19 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: ["night", "light"],
+    themes: [{
+      night: {
+        ...require("daisyui/src/theming/themes")["night"],
+        ".hero-bg": {
+          "background-color": 'hsla(270, 73%, 35%, 1)',
+          "border-color": "#1EA1F1",
+        },
+        // ".hero-bg:hover": {
+        //   "background-color": "red",
+        //   "border-color": "#1C96E1",
+        // },
+      },
+    }, "light"],
   },
   plugins: [require("daisyui")],
 }

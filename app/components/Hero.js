@@ -22,15 +22,7 @@ export const Hero = () => {
     return (
         <div className="h-screen flex flex-col space-y-8 items-center mt-20 text-center" >
             <BackgroundCircles />
-            {/* <div className="hero-overlay bg-opacity-60"></div> */}
-            {/* <div className="hero-content text-center text-neutral-content glass opacity-25 rounded-2xl p-16">
-                <Shapes />
-                <div className="max-w-md ">
-                    <h1 className="mb-5 text-5xl font-bold">Discover a World of Books at Readify</h1>
-                    <p className="mb-5">Welcome to Book Haven, your premier destination for book lovers everywhere. Dive into our extensive collection of fiction, non-fiction, and everything in between. Whether you are searching for a thrilling mystery, a heartwarming romance, or a thought-provoking memoir, we have something for everyone.</p>
-                    <Link href='/bookStore'><button className="btn btn-primary">Explore Our Catalog</button></Link>
-                </div>
-            </div> */}
+
             <div className="box">
                 <div className="container">
                     {/* <div className="shape1"
@@ -58,7 +50,7 @@ export const Hero = () => {
 
                 </div>
                 <Link href='/bookStore'>
-                    <motion.div className='watch-me text-primary' whileHover={{ scale: [null, 1.5, 1.4] }}
+                    <motion.div className='watch-me text-primary btn-twitter' whileHover={{ scale: [null, 1.5, 1.4] }}
                         transition={{ duration: 0.3 }}>Explore our Catalog &nbsp;<i className="fab fa-youtube"></i></motion.div>
                 </Link>
             </div>
