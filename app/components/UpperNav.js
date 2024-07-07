@@ -36,7 +36,7 @@ export const UpperNav = async () => {
             </div>
             <div className="flex items-center gap-6">
 
-                <SearchComponent books={books?.books} />
+                {/* <SearchComponent books={books?.books} /> */}
                 <div className="flex items-center">
                     <Link href='/signup'>
                         <div className="flex items-center gap-1">

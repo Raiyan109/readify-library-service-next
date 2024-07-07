@@ -24,9 +24,9 @@ export const SearchComponent = ({ books }) => {
         <div>
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
-                className="btn"
+                className="px-3 py-2 font-semibold bg-accent text-neutral w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] flex gap-5 items-center justify-between rounded-md"
                 onClick={() => document.getElementById('my_modal_2').showModal()}>
-                <FaSearch />
+                Search Books <FaSearch />
             </button>
             <dialog id="my_modal_2" className="modal">
                 <div className="modal-box space-y-3">
