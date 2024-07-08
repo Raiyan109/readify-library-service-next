@@ -33,10 +33,6 @@ export const Hero2 = async () => {
             {/* flex justify-center items-center */}
             <div className="pb-48 pt-12 px-5 md:px-48 min-h-96">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {/* border border-primary
-border border-primary
-border border-primary
-border border-primary */}
                     <div className="p-10 md:p-7 rounded-[12px] flex flex-col gap-12 lg:col-span-1 col-span-2 row-span-1  bg-neutral text-primary">
                         <div>
                             <h1 className="text-5xl font-bold leading-tight">Discover </h1>

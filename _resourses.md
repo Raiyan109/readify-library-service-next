@@ -9,3 +9,5 @@
 https://dribbble.com/shots/19864071-BookBase-Digital-Book-Library-Dashboard
 
 https://dribbble.com/shots/22432733-WEB-DESIGN-UI-DASBOARD-BOOKS-WEB
+
+[Hero2 is inspired from this design](https://dribbble.com/shots/23120102-Smart-home-Smart-Life-web-design)
