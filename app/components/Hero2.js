@@ -33,34 +33,13 @@ export const Hero2 = async () => {
             {/* flex justify-center items-center */}
             <div className="pb-48 pt-12 px-5 md:px-48 min-h-96">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col gap-12 lg:col-span-1 col-span-2 row-span-1  bg-neutral text-primary">
-                        <div>
-                            <h1 className="text-5xl font-bold leading-tight">Discover </h1>
-                            <h1 className="text-5xl font-bold leading-tight"> The Joy of<br />Reading</h1>
-                        </div>
-                        {/* <p className='max-w-[180px] text-sm'>Smart home solutions for a modern lifestyle</p> */}
-                        {/* <ButtonWrapper /> */}
-                        {/* <button className="px-3 py-2 font-semibold bg-accent text-neutral w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px] flex gap-5 items-center justify-between rounded-md">
-                            Search Books <FaSearch />
-                            
-                        </button> */}
-                        <SearchComponent books={books?.books} />
-                    </div>
-
-                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col gap-12 lg:col-span-1 col-span-2 row-span-1 bg-accent text-[#09090F]">
-                        <div className='flex items-center justify-center md:justify-start gap-5'>
-                            <LuSparkle size={40} />
-                            <h1 className="text-4xl md:text-3xl font-bold">Connect Easily</h1>
-                        </div>
-                        <Image src={heroCardImg} alt='heroImage' width={100} height={100} className='w-full h-32 object-contain object-center md:flex justify-center items-center hidden' />
-                    </div>
-
-                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col gap-16 col-span-2 row-span-1 lg:row-span-2">
-                        <Image src={doodle} alt='background' width={200} height={200} className=' object-contain object-center' />
+                    {/* Enlighten section */}
+                    <div className="p-3 md:p-7 rounded-[12px] flex flex-col gap-16 col-span-2 row-span-1 lg:row-span-2 order-1 lg:order-3">
+                        <Image src={doodle} alt='spiral' width={200} height={200} className=' object-contain object-center hidden md:block' />
                         <div className='space-y-2'>
                             <div className='flex items-center gap-32'>
                                 <h1 className='text-white text-6xl font-extralight max-w-[380px] leading-tight'>Enlighten Yourself With Books</h1>
-                                <HiOutlineSparkles size={70} color='white' />
+                                <HiOutlineSparkles size={70} color='white' className='hidden lg:block' />
                             </div>
                             <p className='text-lg max-w-sm leading-tight'>Search our catalogs and enjoy maintainable classic books</p>
                         </div>
@@ -70,13 +49,31 @@ export const Hero2 = async () => {
                             </button>
                         </Link>
                     </div>
-                    {/* hidden md: */}
-                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col md:flex-row justify-between gap-4 md:gap-20 col-span-2 relative h-96 w-full" style={{
+
+                    {/* Discover section */}
+                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col gap-12 lg:col-span-1 col-span-2 row-span-1 bg-neutral text-primary order-2 lg:order-1">
+                        <div>
+                            <h1 className="text-5xl font-bold leading-tight">Discover </h1>
+                            <h1 className="text-5xl font-bold leading-tight"> The Joy of<br />Reading</h1>
+                        </div>
+                        <SearchComponent books={books?.books} />
+                    </div>
+
+                    {/* Connect Easily section */}
+                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col gap-12 lg:col-span-1 col-span-2 row-span-1 bg-accent text-[#09090F] order-3 lg:order-2">
+                        <div className='flex items-center justify-center md:justify-start gap-5'>
+                            <LuSparkle size={40} />
+                            <h1 className="text-4xl md:text-3xl font-bold">Connect Easily</h1>
+                        </div>
+                        <Image src={heroCardImg} alt='heroImage' width={100} height={100} className='w-full h-32 object-contain object-center md:flex justify-center items-center hidden' />
+                    </div>
+
+                    {/* Last section */}
+                    <div className="p-10 md:p-7 rounded-[12px] flex flex-col md:flex-row justify-between gap-4 md:gap-20 col-span-2 relative h-96 w-full order-4 lg:order-4" style={{
                         backgroundImage: `url("${heroCardImg3.src}")`, backgroundPosition: 'center',
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat'
                     }}>
-
                         <h1 className='text-accent text-5xl font-semibold absolute bottom-10 max-w-xs hidden md:block'>Unlock the Power of Knowledge</h1>
                     </div>
                 </div>
